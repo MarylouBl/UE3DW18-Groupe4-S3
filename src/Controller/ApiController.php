@@ -98,4 +98,23 @@ class ApiController {
         );
         return $data;
     }
+
+
+    /**
+     * API get RSS feed.
+     *
+     * @param Application $app Silex application
+     *
+     * @return Link details in JSON format
+     */
+    public function getRSSFeed(Application $app) {
+        $links = $app['dao.link']->findAll();
+        // Convert an array of objects ($links) into an array of associative arrays
+        $responseData = array();
+        foreach ($links as $link) {
+
+        }
+
+        //Je suppose que c'est ici qu'il faut retourner le tableau contenant les liens et leurs infos mais je ne comprends pas à quoi les renvoyer ni comment faire un fichier xml avec des variables dedans, en dynamique... _Marylou
+    }
 }
